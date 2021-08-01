@@ -20,14 +20,19 @@ class Main(CourseHolder):  # main class
     rubles = 0
     euros = 0
     dollars = 0
+    debug = False
 
-    def __init__(self, course_update_cool_down, rubles, dollars, euros):
+    def __init__(self, course_update_cool_down, rubles, dollars, euros, debug):
+        '''if debug.lower() in ('1', 'true', 'y'):
+            self.debug = True
+        else:
+            self.debug = False'''
         self.dollars = dollars
         self.euros = euros
         self.rubles = rubles
         super().__init__(course_update_cool_down)  # init master-constructor
 
-    def printCourse(self):  # overrides course print
+    def print_course(self):  # overrides course print
         print('rub: {}\nusd: {}\neur: {}\n'.format(self.rubles, self.dollars, self.euros))
         print('rub-usd: {}\nrub-eur: {}\nusd-eur: {}\n'.format(
             self.dollar,
@@ -49,7 +54,29 @@ if __name__ == '__main__':
         default='n',
         help='debug microservice (y/n/1/0/true/false)'
     )
+    parser.add_argument(
+        '--rub',
+        type=int,
+        default=0,
+        help='rubles'
+    )
+    parser.add_argument(
+        '--usd',
+        type=int,
+        default=0,
+        help='united states dollars'
+    )
+    parser.add_argument(
+        '--eur',
+        type=int,
+        default=0,
+        help='euro'
+    )
+    parser.add_argument(
+        '--period',
+        type=float,
+        default=1,
+        help='server request period'
+    )
     arguments = parser.parse_args()
-    print(arguments.debug)
-
-    #obj = Main(1, 100, 200, 300)
+    instance = Main(arguments.period, arguments.rub, arguments.usd, arguments.eur, arguments.debug)
