@@ -44,7 +44,7 @@ class CourseHolder:
             self.course_changed = True
         if not self.debug:
             print('Valuate course updated at', datetime.datetime.now())
-        await asyncio.sleep(self.course_update_cool_down * 10)
+        await asyncio.sleep(self.course_update_cool_down * 60)
         await self.check_course_stream.create_task(self.check_course())
 
     @abstractmethod
@@ -53,5 +53,5 @@ class CourseHolder:
 
     async def show_course(self):
         self.print_course()
-        await asyncio.sleep(10)
+        await asyncio.sleep(60)
         await self.check_course_stream.create_task(self.show_course())
