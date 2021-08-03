@@ -1,0 +1,23 @@
+WARNING:root:aliases not provide
+INFO:root:app started
+INFO:root:routes declared on server
+INFO:root:server changed to up state
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:root:check course stream started
+DEBUG:root:valuate course requested from API
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.cbr-xml-daily.ru:443
+DEBUG:urllib3.connectionpool:https://www.cbr-xml-daily.ru:443 "GET /daily_json.js HTTP/1.1" 200 1724
+DEBUG:root:valuate course requested from API
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.cbr-xml-daily.ru:443
+DEBUG:urllib3.connectionpool:https://www.cbr-xml-daily.ru:443 "GET /daily_json.js HTTP/1.1" 200 1724
+DEBUG:root:API requested as GET with param /usd/get and responded like {'usd': 100}
+INFO:aiohttp.access:::1 [03/Aug/2021:07:00:02 +0000] "GET /usd/get HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.135 YaBrowser/21.6.2.855 Yowser/2.5 Safari/537.36"
+DEBUG:root:valuate course requested from API
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.cbr-xml-daily.ru:443
+DEBUG:urllib3.connectionpool:https://www.cbr-xml-daily.ru:443 "GET /daily_json.js HTTP/1.1" 200 1724
+INFO:aiohttp.access:::1 [03/Aug/2021:07:00:11 +0000] "GET /modify HTTP/1.1" 405 209 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.135 YaBrowser/21.6.2.855 Yowser/2.5 Safari/537.36"
+DEBUG:root:API requested as POST with param /modify and responded like {'new_values': {'usd': 200}}
+INFO:aiohttp.access:::1 [03/Aug/2021:07:00:14 +0000] "POST /modify HTTP/1.1" 200 185 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.135 YaBrowser/21.6.2.855 Yowser/2.5 Safari/537.36"
+DEBUG:root:valuate course requested from API
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.cbr-xml-daily.ru:443
+DEBUG:urllib3.connectionpool:https://www.cbr-xml-daily.ru:443 "GET /daily_json.js HTTP/1.1" 200 1724
